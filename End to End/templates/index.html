@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+          <h1 class="logo">Dharini's Summarization App</h1>
+        </div>
+    </header>
+<div class = 'body'>
+<div class='parent'>
+<div class='child'>
+
+<!-- <div class="container"> -->
+<h3 class="logo">Input Text</h3>
+    
+<form action = "{{url_for('Summarize')}}" method="post">
+    <textarea name = "data" cols="50" rows="25" placeholder="Enter your text" style="background-color:black;color:#fff ;" aria-required="required"></textarea>
+    <!-- the range slider for giving number of words as input-->
+    <input type="range" min="20" max="1000" name="maxL" value="100">
+    <!-- name in textarea is important - bacause it connects the front end and the back end -->
+    <button type="submit">Submit</button>
+    <button type="reset">Clear</button>
+</form>
+<!-- </div> -->
+</div>
+
+<div class='child'>
+<!-- <div class="container"> -->
+<h3 class="logo">Summarized Text</h3>
+<textarea name="result" style="background-color:black; color:#fff;" cols="50" rows="25">{{result}}</textarea>
+<!-- </div> -->
+</div>
+</div>
+</div>
+</body>
+</html>
+
+
+<!--
+<h1> Output of the summarization</h1>
+<p>{{result}}</p>
+<h2>Minimum Length</h2>
+<p>{{minlen}}</p>
+<h2>Maximum Length</h2>
+<p>{{maxlen}}</p>
+-->
